@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul, li{ list-style: none; }
+a { text-decoration: none; }
+.clear { clear: both; }
+.container{
+    display: flex;
+}
+input{   
+    border: none;
+    outline: none;
+}
+
+.painel-admin{
+    width: 20%;
+    height: 100vh;
+
+    box-shadow: 0px 2px 5px rgba(0,0,0,.5);
+}
+
+
+/* 
+    right: f105;
+    left: f104;
+*/
+
+
+
+
+
