@@ -60,21 +60,13 @@
                         <input type="submit" name="send" value="Registrar"/>
                     </div>
                 </form>
-                    
-            </section>
-
-
-            
-            
+            </section>        
         </header>
 
-
         <section class="teste">
-
+            <h1>PORTAL</h1>
         </section>
-
     </section>
-
 
     <script
         src="https://code.jquery.com/jquery-3.5.0.js" 
@@ -91,20 +83,19 @@
             $('.box-icon-painel').click(function(){
                 $('.teste').toggleClass('active');
                 $('.icon-painel').toggleClass('active');
-
+                $('.painel-admin').toggle(0);
+                    
                 switch(opt){
                     case 0: 
-                    $('.painel-admin').show(0);
                     $('.box-icon-painel').animate({
                         "left":"30%"
-                    },200)
+                    },300)
                     opt=1;
                         break;
                     case 1: 
-                    $('.painel-admin').hide(0);
                     $('.box-icon-painel').animate({
                         "left":"0"
-                    },200)
+                    },300)
                     opt=0;
                         break;
                 }
