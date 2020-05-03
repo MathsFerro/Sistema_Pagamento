@@ -22,6 +22,7 @@
 </head>
 <body>
     <section class="container">
+    
         <header class="painel-admin">
             <div class="img-perfil"><img src="./images/foto.png"></div>
             <form method="POST">
