@@ -16,6 +16,21 @@ input{
     outline: none;
 }
 
+.img-perfil{
+    display: flex;
+    justify-content: center;
+    
+    margin-bottom: 50px;
+}
+
+.img-perfil img{
+    width: 130px;
+    height: 130px;
+    border-radius: 100%;
+
+    box-shadow: 0px 2px 5px rgba(0,0,0,.8);
+}
+
 .painel-admin{
     width: 20%;
     height: 100vh;

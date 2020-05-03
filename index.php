@@ -23,7 +23,7 @@
 <body>
     <section class="container">
         <header class="painel-admin">
-
+            <div class="img-perfil"><img src="./images/foto.png"></div>
             <form method="POST">
                 <div class="box-form">
                     <legend>FUNCIONÁRIO:</legend>
@@ -52,8 +52,9 @@
                     <input type="submit" name="send" value="Enviar"/>
                 </div>
             </form>
-
         </header>
+
+
     </section>
 
 
