@@ -22,39 +22,56 @@
 </head>
 <body>
     <section class="container">
-        <h1>testandogit</h1>
+        <div class="box-icon-painel">
+            <div class="icon-painel"></div>
+        </div>
         <header class="painel-admin">
-            <div class="img-perfil"><img src="./images/foto.png"></div>
-            <form method="POST">
-                <div class="box-form">
-                    <legend>FUNCIONÁRIO:</legend>
-                    <select name="opt">
-                        <?php 
-                            $getFuncionario = $_SESSION["funcionario"];
-                            $totalFuncionario = count($getFuncionario);
-                            for($i=0; $i<$totalFuncionario; $i++){
-                                echo "<option value=$getFuncionario[$i]>$getFuncionario[$i]</option>";
-                            }                   
-                        ?>
-                    </select>
+            <div class="img-perfil"><img src="" alt=""></div>
+            <div class="menu-registrar-hora">
+                    <h1>REGISTRAR HORA</h1>
+                    <div class="iconmenu"></div>
                 </div>
+            <section class="container-registrar-hora">
+                <form method="POST" class="formulario-hora">
+                    <div class="box-form">
+                        <legend>FUNCIONÁRIO:</legend>
+                        <select name="opt">
+                            <?php 
+                                $getFuncionario = $_SESSION["funcionario"];
+                                $totalFuncionario = count($getFuncionario);
+                                for($i=0; $i<$totalFuncionario; $i++){
+                                    echo "<option value=$getFuncionario[$i]>$getFuncionario[$i]</option>";
+                                }                   
+                            ?>
+                        </select>
+                    </div>
 
-                <div class="box-form">
-                    <legend>ENTRADA: </legend>
-                    <input type="time" name="entrada" required />
-                </div>
+                    <div class="box-form">
+                        <legend>ENTRADA: </legend>
+                        <input type="time" name="entrada" required />
+                    </div>
 
-                <div class="box-form">
-                    <legend>SAÍDA:</legend>
-                    <input type="time" name="saida" required />
-                </div>
+                    <div class="box-form">
+                        <legend>SAÍDA:</legend>
+                        <input type="time" name="saida" required />
+                    </div>
 
-                <div class="box-form">
-                    <input type="submit" name="send" value="Enviar"/>
-                </div>
-            </form>
+                    <div class="box-form">
+                        <input type="submit" name="send" value="Registrar"/>
+                    </div>
+                </form>
+                    
+            </section>
+
+
+            
+            
         </header>
 
+
+        <section class="teste">
+
+        </section>
 
     </section>
 
@@ -66,13 +83,70 @@
     </script>
 
     <script>
+        $('.painel-admin').hide(0);
+        $('.container-registrar-hora').slideUp(0);
+        
+        $(document).ready(function(){
+            var opt=0;
+            $('.box-icon-painel').click(function(){
+                $('.teste').toggleClass('active');
+                $('.icon-painel').toggleClass('active');
 
+                switch(opt){
+                    case 0: 
+                    $('.painel-admin').show(0);
+                    $('.box-icon-painel').animate({
+                        "left":"30%"
+                    },200)
+                    opt=1;
+                        break;
+                    case 1: 
+                    $('.painel-admin').hide(0);
+                    $('.box-icon-painel').animate({
+                        "left":"0"
+                    },200)
+                    opt=0;
+                        break;
+                }
+            })
+
+            opt=0;
+            $('.menu-registrar-hora').click(function(){      
+                $('.iconmenu').toggleClass('active');
+                $('.menu-registrar-hora').toggleClass('active');
+                $('.container-registrar-hora').slideToggle(200);
+
+            })
+        })
+
+
+
+            /*
+
+                switch(opt){
+                    case 0:
+                        $('.menu-registrar-hora').removeClass('active');
+                        $('.container-registrar-hora').slideToggle(200);            
+                        $('.iconmenu').css({
+                            "transform":"rotate(180deg)"
+                        })
+                        opt=1;
+                        break;
+                    case 1:
+                        $('.menu-registrar-hora').toggleClass('active');
+                        $('.container-registrar-hora').slideToggle(200);            
+                        $('.iconmenu').css({
+                            "transform":"rotate(0deg)" 
+                        })
+
+
+                        opt=0;
+                        break;
+                }
+
+            */
     </script>
 
 </body>
 </html>
 
-<?php
-    // Limpar a sessão
-    session_destroy();
-?>
