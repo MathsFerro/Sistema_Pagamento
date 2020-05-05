@@ -75,38 +75,31 @@
     </script>
 
     <script>
-        $('.painel-admin').hide(0);
-        $('.container-registrar-hora').slideUp(0);
-        
+        let painel = $('.painel-admin').hide(0);
+        let containerRegistroHora = $('.container-registrar-hora').slideUp(0);
+        let menuRegistrarHora = $('.menu-registrar-hora');
+        let iconePainel = $('.icon-painel');
+        let iconeMenu = $('.iconmenu');
         $(document).ready(function(){
-            var opt=0;
             $('.box-icon-painel').click(function(){
                 $('.teste').toggleClass('active');
-                $('.icon-painel').toggleClass('active');
-                $('.painel-admin').toggle(0);
-                    
-                switch(opt){
-                    case 0: 
+                iconePainel.toggleClass('active');
+                painel = $('.painel-admin').toggle(0);
+                if(iconePainel.hasClass('active')){
                     $('.box-icon-painel').animate({
                         "left":"30%"
-                    },300)
-                    opt=1;
-                        break;
-                    case 1: 
+                    },200)
+                }else{
                     $('.box-icon-painel').animate({
                         "left":"0"
-                    },300)
-                    opt=0;
-                        break;
+                    },200)
                 }
             })
 
-            opt=0;
-            $('.menu-registrar-hora').click(function(){      
-                $('.iconmenu').toggleClass('active');
-                $('.menu-registrar-hora').toggleClass('active');
-                $('.container-registrar-hora').slideToggle(200);
-
+            menuRegistrarHora.click(function(){      
+                iconeMenu.toggleClass('active');
+                menuRegistrarHora.toggleClass('active');
+                containerRegistroHora.slideToggle(200);
             })
         })
 
